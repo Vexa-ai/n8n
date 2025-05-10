@@ -1,0 +1,283 @@
+{
+  "name": "google meet with vexa",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://gateway.dev.vexa.ai/bots/status",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        1240
+      ],
+      "id": "c4502333-c333-4df4-94ff-eff8e776b20b",
+      "name": "get bot status"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://gateway.dev.vexa.ai/bots/google_meet/mpu-dqtj-jcm/config",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "language",
+              "value": "es"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        1420
+      ],
+      "id": "a40759fc-6c96-469d-87b1-f555d9ed08d5",
+      "name": "update bot config"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "https://gateway.dev.vexa.ai/bots/google_meet/yuv-ndci-ena",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        760
+      ],
+      "id": "f0538cf7-12c2-4a19-ae2f-ebc762c3d4a1",
+      "name": "stop bot"
+    },
+    {
+      "parameters": {
+        "url": "https://gateway.dev.vexa.ai/meetings",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        1600
+      ],
+      "id": "3d1d95dd-ae96-4834-95d5-b3979e96e134",
+      "name": "list meetings"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://gateway.dev.vexa.ai/bots",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "platform",
+              "value": "google_meet"
+            },
+            {
+              "name": "native_meeting_id",
+              "value": "=yuv-ndci-ena"
+            },
+            {
+              "name": "language",
+              "value": "en"
+            },
+            {
+              "name": "bot_name",
+              "value": "MyMeetingBot"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        -60
+      ],
+      "id": "f92b652c-5fb1-4bf0-80dd-92571fa83b4b",
+      "name": "send bot to a meeting"
+    },
+    {
+      "parameters": {
+        "url": "https://gateway.dev.vexa.ai/transcripts/google_meet/yuv-ndci-ena",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "xTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        340
+      ],
+      "id": "dc33ff59-e050-4c62-933f-77e6133df4a8",
+      "name": "get transcripts"
+    },
+    {
+      "parameters": {
+        "content": "### 1. Get API key from Vexa\n\n#### [get API key](https://vexa.ai/dashboard/api-keys)\n\nupdate `X-API-Key` in every block \n\nxTIW7xsSr1CO8Z56jNNDeG1VtZr9aSf134scjDLe\n\n\n### 2. start Google Meet\n\n-  [start meeting](https://meet.new/)\n-  extract meeting id like `mpu-dqtj-jcm`\n\n\nyuv-ndci-ena\n\n\n\n\n\n\n\n",
+        "height": 380,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        -600
+      ],
+      "id": "675e0341-dc1d-4ba9-8182-6714afde3d8e",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "building blocks to:\n## How to send a bot to any Google Meet\n\n### to get meeting transcript during or after conversation\n\n\n### Real time: transcription|translation",
+        "height": 300,
+        "width": 560
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1320,
+        -1060
+      ],
+      "id": "587ba8f4-0373-497d-a6c5-a7e8c630f661",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "#### 2. send bot to the meeting\n\n\nmake sure you set up \n\n- `X-API-Key`\n\n- your meeting id with`native_meeting_id`\n\n\nwait for about 10 sec for the bot to admit the meeting and confirm the bot",
+        "height": 300,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        -140
+      ],
+      "id": "57a0787f-801e-45b6-9ca1-7f20b90b1c02",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "#### 3. get meeting transcripts\n\nspeak something!\n\n\nmake sure you set: \n\n- `X-API-Key`\n\n- your meeting id xxx-xxxx-xxx in  https://gateway.dev.vexa.ai/transcripts/google_meet/xxx-xxxx-xxx\n\n\nsee your transcripts coming with the output\n",
+        "height": 360,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        220
+      ],
+      "id": "bb4da2eb-5119-4cbe-97c7-480e720f7ed1",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "#### 4. Stop the bot\n\n\n\n\nmake sure you set: \n\n- `X-API-Key`\n\n- your meeting id xxx-xxxx-xxx in  https://gateway.dev.vexa.ai/bots/google_meet/xxx-xxxx-xxx \n\n\n\nIt's important to remove the bot each time as you can not run more then 1 bot at a time while testing",
+        "height": 360,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        660
+      ],
+      "id": "09988694-d5cc-422e-971d-9e8bbd617221",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "### other API endpoints",
+        "height": 620,
+        "width": 460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        1140
+      ],
+      "id": "8dac2d81-f7a7-4ae8-935f-81f0d30297e6",
+      "name": "Sticky Note9"
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ff96d7d2-cfc2-494f-8622-e66b54c5940f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63e9167192e28c4d33ac80ade9e990d245073f4971d5a8f730c19da0691f1a71"
+  },
+  "id": "I82JFrCxZve2VXa9",
+  "tags": []
+}
