@@ -48,8 +48,8 @@ There are two ways to get your Vexa API key:
    - Click "Create New API Key"
    - Copy your API key and keep it secure
 
-2. **From Reddit Community**
-   - Join the [Vexa Reddit Community](https://www.reddit.com/r/vexa/)
+2. **From Fidcord Community**
+   - Join the [Vexa Disckod Community](https://discord.gg/kMXTD2Maw7)
    - Look for the pinned post about API access
    - Follow the instructions to request an API key
    - The community moderators will provide you with access
